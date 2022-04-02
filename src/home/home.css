@@ -1,0 +1,38 @@
+.homeBody {
+    background-color: rgb(245, 99, 14);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 900px;
+}
+
+
+.homeLogo {
+    height: 600px;
+}
+
+.homePictures {
+    margin-top: 100px;
+    display: flex;
+    justify-content:space-between;
+}
+
+.homeSheldonPic {
+    height: 400px;
+}
+
+.homeLeonardPic {
+    height: 350px;
+}
+
+.homeSheldon {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+}
+
+.homeLeonard {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+}

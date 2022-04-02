@@ -1,0 +1,32 @@
+.rulesBody {
+    width: 100%;
+    background-color: rgb(94, 175, 89);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+.rulesMain {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+
+.rulesPl {
+    margin-top: 80px;
+    margin-left: 30px;
+    font-family: 'Grandstander', cursive;
+    font-weight: 300;
+};
+
+.rulesHeader{
+width: auto;
+}
+
+.rulesHeaderH {
+    font-family: 'Grandstander', cursive;
+    font-weight: 400;
+    font-size: 4em;
+}
+
