@@ -5,6 +5,9 @@ import Paper from "./paper.png"
 import Scissors from "./scissors.png"
 import Lizard from "./lizard.png"
 import Spock from "./spock.png"
+import Win from "./sheldon-win.png"
+import Draw from "./sheldon-draw.png"
+import Lose from "./sheldon-lose.png"
 
 
 
@@ -16,6 +19,7 @@ const Game = () => {
     let [score, setScore] = useState(0)
     const choices = ["kamień", 'papier', 'nożyczki', 'jaszczurka', 'Spock']
     const choicesPics = [<img src={Rock} alt="kamień" height={100} />, <img src={Paper} alt="papier" height={100} />, <img src={Scissors} alt="nożyczki" height={100} />, <img src={Lizard} alt="jaszczurka" height={100} />, <img src={Spock} alt="spock" height={100} />]
+    const [photo, setPhoto] = useState([])
 
 
     const handleClick = (value) => {
@@ -54,6 +58,7 @@ const Game = () => {
             case "nożyczkinożyczki":
             case "papierpapier":
                 setResult("Wynik: Remis")
+                setPhoto(<img src={Win} alt="wygrana" height={250} />)
                 break
             case "kamieńnożyczki":
             case "kamieńjaszczurka":
@@ -66,6 +71,7 @@ const Game = () => {
             case "nożyczkijaszczurka":
             case "nożyczkipapier":
                 setResult("Wynik: Wygrałes")
+                setPhoto(<img src={Draw} alt="remis" height={250} />)
                 setScore(score + 1)
                 break
             case "kamieńpapier":
@@ -79,6 +85,7 @@ const Game = () => {
             case "nożyczkikamień":
             case "nożyczkiSpock":
                 setResult("Wynik: Przegrałeś")
+                setPhoto(<img src={Lose} alt="przegrana" height={250} />)
                 alert("Koniec Gry")
                 pushScore(score)
                 setScore(score = 0)
@@ -93,17 +100,17 @@ const Game = () => {
             <h2 className="gameUserChoice">Twój wybór to: {userChoice}</h2>
             <h2 className="gameComputerChoice">Wybór komputera to: {computerChoice}</h2>
             <div className="choicesChoices">
-                <div>
+                <div className="gameButtons">
                     {choices.map((choice, index) =>
                         <button className="gameButton" key={index} onClick={() => handleClick(choice)}>{choice}</button>
                     )}</div>
-                <div>
+                <div className="gameButtonPics">
                     {choicesPics.map((choicesPic, index) =>
                         <div className="gameButtonPic" key={index}>{choicesPic}</div>
                     )}</div>
             </div>
             <h2 className="gameResult">{result}</h2>
-            <h2 className="gameWins">Wygrane: {score}</h2>
+            <h2 className="gameWins">Wygrane: {score} <br />{photo}</h2>
         </div>
     )
 }
