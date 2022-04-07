@@ -5,6 +5,7 @@
     align-items: center;
     flex-direction: column;
     height: 100%;
+    font-family: 'Grandstander', cursive;
 }
 .rulesMain {
     display: flex;
@@ -14,9 +15,9 @@
 
 
 .rulesPl {
-    margin-top: 80px;
+    font-size: 24px;
+    margin-top: 50px;
     margin-left: 30px;
-    font-family: 'Grandstander', cursive;
     font-weight: 300;
 };
 
@@ -25,8 +26,18 @@ width: auto;
 }
 
 .rulesHeaderH {
-    font-family: 'Grandstander', cursive;
     font-weight: 400;
     font-size: 4em;
 }
 
+.rulesOverall {
+    display: flex;
+    justify-content: space-around;
+}
+
+h2 {
+    width: 600px;
+    display: flex;
+    align-items: center;
+}
+/* rozstrzelic tekst i powiekszyc */

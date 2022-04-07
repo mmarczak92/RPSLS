@@ -3,7 +3,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 900px;
+    height: 100%;
+    font-family: 'Grandstander', cursive;
+    font-weight: 400;
+    font-size: 2em;
 }
 
 
@@ -12,16 +15,19 @@
 }
 
 .homePictures {
-    margin-top: 100px;
+    margin-top: 25px;
     display: flex;
     justify-content:space-between;
+    border-bottom: 4px solid black;
 }
 
 .homeSheldonPic {
+    margin-top: 199px;
     height: 400px;
 }
 
 .homeLeonardPic {
+    margin-top: 250px;
     height: 350px;
 }
 

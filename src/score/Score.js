@@ -1,81 +1,47 @@
 import "./score.css";
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from "react";
+import SimpleTableComponent from "reactjs-simple-table"
+import TBBT from "./tbbt.png"
 
 const Score = () => {
-    // const [scoreTable, setScoreTable] = useState([])
+  const url = "http://localhost:8000/Wyniki"
+  const [data, setData] = useState([]);
+
+  const getScores = () => {
+    fetch(url).then(resp => resp.json()).then(resp => setData(resp))
+  }
+
+  useEffect(() => {
+    getScores()
+  }, [])
 
 
-// // 
-//     useEffect(() => {
-//         fetch('http://localhost:8000/Wyniki')
-//         .then(res => {
-//             return res.json();
-//         })
-//         .then(data => {
-//             console.log(data);
-//             setScoreTable(data)
-//         })
-//     },[])
 
 
-    return (  
+  const columns = [
+    {
+      field: "id",
+      headerName: "Gra",
+    },
+    {
+      field: "wynik",
+      headerName: "Liczba wygranych",
+    },
+  ];
+
+  return (
     <div className="scoreBody">
-        <h1 className="scoreHeader">Tablica wyników TBC</h1>
-        <div>
-<table>
-  <thead>
-    <tr>
-      <th>Header</th>
-      <th>Header</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Cell</td>
-      <td>Cell</td>
-    </tr>
-    <tr>
-      <td>Cell</td>
-      <td>Cell</td>
-    </tr>
-    <tr>
-      <td>Cell</td>
-      <td>Cell</td>
-    </tr>
-    <tr>
-      <td>Cell</td>
-      <td>Cell</td>
-    </tr>
-    <tr>
-      <td>Cell</td>
-      <td>Cell</td>
-    </tr>
-    <tr>
-      <td>Cell</td>
-      <td>Cell</td>
-    </tr>
-    <tr>
-      <td>Cell</td>
-      <td>Cell</td>
-    </tr>
-    <tr>
-      <td>Cell</td>
-      <td>Cell</td>
-    </tr>
-    <tr>
-      <td>Cell</td>
-      <td>Cell</td>
-    </tr>
-    <tr>
-      <td>Cell</td>
-      <td>Cell</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+      <h1 className="scoreHeader">Tablica wyników </h1>
+
+      <div className="ScoreTable">
+        <SimpleTableComponent
+          columns={columns}
+          list={data}
+        />
+      </div>
+      <img className="scorePicture" src={TBBT} alt="Ekipa TBBT" />
     </div>
-    )
-}
+  );
+};
 
-
-export default Score
+export default Score;

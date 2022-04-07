@@ -1,22 +1,21 @@
 .scoreBody {
-    background-color: rgb(53, 139, 214);
-    display: flex;
-    align-items: center;
-    height: 1000px;
-    flex-direction: column;
-    font-family: 'Grandstander', cursive;
-    font-weight: 400;
+  background-color: rgb(53, 139, 214);
+  display: flex;
+  align-items: center;
+  min-height: 900px;
+  height: 100%;
+  flex-direction: column;
+  font-family: "Grandstander", cursive;
+  font-weight: 400;
 }
 
-.scoreHeader{
-    font-family: 'Grandstander', cursive;
-    font-weight: 400;
-    font-size: 4em;
+.scoreHeader {
+  font-family: "Grandstander", cursive;
+  font-weight: 400;
+  font-size: 4em;
 }
 
-table {
-    border: 2px solid black;
-    font-family: 'Grandstander', cursive;
-    font-weight: 400;
-    font-size: 1.8em;
+
+.scorePicture {
+  margin: 45px 700px 45px 0px
 }
